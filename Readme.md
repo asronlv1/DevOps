@@ -1,4 +1,4 @@
-### Part 2 – Pod
+## Part 2 – Pod
 
 **Question:**  
 What happens if you delete this Pod? Who recreates it?
