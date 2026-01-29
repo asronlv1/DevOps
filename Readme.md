@@ -30,3 +30,11 @@ ClusterIP, it’s reachable only inside the cluster.
 **Which Service is best for production?**  
 LoadBalancer, typical production choice in cloud environments.
 
+## Part 6 – Ingress (HTTP Routing)
+
+**Does Ingress work without an Ingress Controller?**  
+No. Without an Ingress Controller, the Ingress rules are not applied and traffic is not routed.
+
+**Why not expose every Service directly?**  
+Exposing every Service makes the setup harder to manage and less secure.  
+Ingress allows handling external access in a single, controlled place.
