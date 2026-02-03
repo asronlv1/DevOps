@@ -39,3 +39,10 @@ helm create my-app
 
 This command generates a complete Helm chart skeleton.
 
+Step 3 – Explore Chart Structure
+-------------------
+
+Chart.yaml – chart metadata
+values.yaml – configuration values
+templates/ – Kubernetes manifest templates
+
