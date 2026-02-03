@@ -43,6 +43,9 @@ Step 3 – Explore Chart Structure
 -------------------
 
 Chart.yaml – chart metadata
+
 values.yaml – configuration values
+
 templates/ – Kubernetes manifest templates
+
 
