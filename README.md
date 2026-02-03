@@ -30,3 +30,9 @@ screenshots/kubectrlclu.png
 These checks confirm that the Kubernetes cluster is running correctly
 and Helm is installed and ready for use.
 
+
+Command:
+helm create my-app
+
+This command generates a complete Helm chart skeleton.
+
