@@ -49,3 +49,15 @@ values.yaml – configuration values
 templates/ – Kubernetes manifest templates
 
 
+Step 4 – Edit values.yaml
+-------------------
+
+The values.yaml file was modified to customize the deployment.
+
+replicaCount: 2
+
+image:
+  repository: nginx
+  tag: "1.25"
+
+
