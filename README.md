@@ -3,8 +3,9 @@ Class 6 – Kubernetes & Helm Verification
 This branch contains environment verification for a Kubernetes cluster
 using Minikube and Helm.
 
-Environment Checks
+Step 1 – Verify Environment
 ------------------
+
 
 Kubernetes nodes:
 kubectl get nodes
@@ -30,6 +31,8 @@ screenshots/kubectrlclu.png
 These checks confirm that the Kubernetes cluster is running correctly
 and Helm is installed and ready for use.
 
+Step 2 – Create a Helm Chart
+-------------------
 
 Command:
 helm create my-app
