@@ -1,3 +1,6 @@
+Part 1
+-----------------
+
 Deployment – Runs the application with multiple replicas.
 
 Service – Exposes the Pods through a stable network endpoint.
