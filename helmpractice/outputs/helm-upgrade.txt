@@ -1,0 +1,24 @@
+### helm upgrade --install myapp .
+Release "myapp" has been upgraded. Happy Helming!
+NAME: myapp
+LAST DEPLOYED: Thu Feb  5 15:22:54 2026
+NAMESPACE: default
+STATUS: deployed
+REVISION: 4
+TEST SUITE: None
+
+### kubectl get deploy,ds,job,cronjob
+NAME                                 READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/myapp-helmpractice   0/2     1            0           6h43m
+
+NAME                                   DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+daemonset.apps/myapp-helmpractice-ds   1         1         0       1            0           <none>          6h43m
+
+NAME                                         STATUS     COMPLETIONS   DURATION   AGE
+job.batch/myapp-helmpractice-cron-29504950   Complete   1/1           4s         12m
+job.batch/myapp-helmpractice-cron-29504955   Complete   1/1           3s         7m54s
+job.batch/myapp-helmpractice-cron-29504960   Complete   1/1           4s         2m54s
+job.batch/myapp-helmpractice-job             Complete   1/1           4s         6h43m
+
+NAME                                    SCHEDULE      TIMEZONE   SUSPEND   ACTIVE   LAST SCHEDULE   AGE
+cronjob.batch/myapp-helmpractice-cron   */5 * * * *   <none>     False     0        2m54s           6h43m
