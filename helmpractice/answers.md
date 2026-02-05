@@ -14,3 +14,9 @@ Secret – Stores sensitive information such as credentials.
 
 Helpers (_helpers.tpl) – Keeps naming and templates consistent across the chart.
 
+Image Version Upgrade
+
+The image tag was updated in values.yaml and applied using helm upgrade.
+Existing resources were updated with the new image version.
+
+
