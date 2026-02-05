@@ -19,4 +19,9 @@ Image Version Upgrade
 The image tag was updated in values.yaml and applied using helm upgrade.
 Existing resources were updated with the new image version.
 
+Helm History & Rollback
+
+Helm history was used to view previous revisions.
+A rollback was performed to return the release to an earlier version.
+
 
