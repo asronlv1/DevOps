@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "helmpractice.fullname" . }}-config
+data:
+  MESSAGE: {{ .Values.configMap.message | quote }}
+

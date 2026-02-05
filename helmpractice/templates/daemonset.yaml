@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: {{ include "helmpractice.fullname" . }}-ds
+spec:
+  selector:
+    matchLabels:
+      app: {{ include "helmpractice.fullname" . }}-ds
+  template:
+    metadata:
+      labels:
+        app: {{ include "helmpractice.fullname" . }}-ds
+    spec:
+      containers:
+        - name: ds-app
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          args:
+{{- range .Values.image.command }}
+            - {{ . | quote }}
+{{- end }}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+

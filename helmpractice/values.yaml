@@ -1,0 +1,39 @@
+replicaCount: 2
+
+image:
+  repository: hashicorp/http-echo
+  tag: "0.3.1"
+  pullPolicy: IfNotPresent
+  command:
+    - "-text=Hello from Helm"
+
+service:
+  type: ClusterIP
+  port: 5678
+
+configMap:
+  message: "Hello from ConfigMap"
+
+secret:
+  username: "admin"
+  password: "ron1"
+
+job:
+  image:
+    repository: busybox
+    tag: "1.36"
+  command:
+    - sh
+    - -c
+    - 'echo "Hello from Job" && sleep 1'
+
+cronJob:
+  schedule: "*/5 * * * *"
+  image:
+    repository: busybox
+    tag: "1.36"
+  command:
+    - sh
+    - -c
+    - 'date; echo "Hello from CronJob"'
+

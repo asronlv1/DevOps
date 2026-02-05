@@ -1,0 +1,7 @@
+apiVersion: v2
+name: helmpractice
+description: Practice chart with multiple Kubernetes resources
+type: application
+version: 0.1.0
+appVersion: "1.0"
+

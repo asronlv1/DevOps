@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "helmpractice.fullname" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "helmpractice.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "helmpractice.fullname" . }}
+    spec:
+      containers:
+        - name: app
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+{{- range .Values.image.command }}
+            - {{ . | quote }}
+{{- end }}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+          env:
+            - name: MESSAGE
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "helmpractice.fullname" . }}-config
+                  key: MESSAGE
+            - name: USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "helmpractice.fullname" . }}-secret
+                  key: username
+

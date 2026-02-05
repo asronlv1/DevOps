@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "helmpractice.fullname" . }}-job
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: job
+          image: "{{ .Values.job.image.repository }}:{{ .Values.job.image.tag }}"
+          command:
+{{- range .Values.job.command }}
+            - {{ . | quote }}
+{{- end }}
+  backoffLimit: 1
+
